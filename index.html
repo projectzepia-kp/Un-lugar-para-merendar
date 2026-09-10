@@ -5,17 +5,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un Lugar para merendar</title>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="estilo.css">
-    
 </head>
 
 <body>
 
-    <h1>Un Lugar para merendar</h1>
+    <!-- ============ NAVEGACIÓN ============ -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-wrap">
+            <a href="#inicio" class="logo">Un Lugar<span>para merendar</span></a>
 
-    <p>Un lugar para grandes y chicos.</p>
+            <nav class="main-nav" id="mainNav">
+                <a href="#inicio">Inicio</a>
+                <a href="#menu">Menú</a>
+                <a href="#ocasiones">Ocasiones</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
 
+            <a href="#reservar" class="btn btn-outline nav-cta">Reservar mesa</a>
+
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+        <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600&q=80&auto=format&fit=crop"
+                 alt="Barista preparando café en la cafetería">
+        </div>
+        <div class="hero-content">
+            <h1>Un Lugar<br>para merendar</h1>
+            <p class="hero-tagline">Café de especialidad, pastelería casera y tiempo de sobra para quedarte.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn btn-primary">Ver menú</a>
+                <a href="#reservar" class="btn btn-outline-light">Reservar mesa</a>
+                <a href="#pedido" class="btn btn-ghost">Hacer pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ¿QUÉ SE TE ANTOJA? ============ -->
+    <section class="craving" id="antojo">
+        <div class="section-inner">
+            <h2>¿Qué se te antoja?</h2>
+            <p class="section-lead">Elegí una categoría y te mostramos lo mejor de esa mesa.</p>
+
+            <div class="chip-row" id="chipRow">
+                <button class="chip is-active" data-category="todos">Todos</button>
+                <button class="chip" data-category="cafe">Café</button>
+                <button class="chip" data-category="desayunos">Desayunos</button>
+                <button class="chip" data-category="pasteleria">Pastelería</button>
+                <button class="chip" data-category="frias">Bebidas frías</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MENÚ / CARRUSEL ============ -->
+    <section class="menu-preview" id="menu">
+        <div class="section-inner">
+            <div class="menu-head">
+                <h2>Nuestros favoritos</h2>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">‹</button>
+                    <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="carousel" id="carousel">
+
+                <article class="card product-card" data-category="cafe">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop" alt="Café con leche cremoso">
+                    </div>
+                    <div class="card-body">
+                        <h3>Café con leche</h3>
+                        <p>Suave y cremoso, con granos de origen.</p>
+                        <span class="price">$2.200</span>
+                    </div>
+                </article>
+
+                <article class="card product-card" data-category="desayunos">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800&q=80&auto=format&fit=crop" alt="Medialunas de manteca recién horneadas">
+                    </div>
+                    <div class="card-body">
+                        <h3>Medialunas de manteca</h3>
+                        <p>Recién horneadas, todas las mañanas.</p>
+                        <span class="price">$1.500</span>
+                    </div>
+                </article>
+
+                <article class="card product-card" data-category="cafe">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80&auto=format&fit=crop" alt="Chocolate caliente espeso">
+                    </div>
+                    <div class="card-body">
+                        <h3>Chocolate caliente</h3>
+                        <p>Espeso, como el de la abuela.</p>
+                        <span class="price">$2.400</span>
+                    </div>
+                </article>
+
+                <article class="card product-card" data-category="desayunos">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80&auto=format&fit=crop" alt="Tostado de jamón y queso">
+                    </div>
+                    <div class="card-body">
+                        <h3>Tostado de jamón y queso</h3>
+                        <p>Pan casero, tostado al momento.</p>
+                        <span class="price">$3.200</span>
+                    </div>
+                </article>
+
+                <article class="card product-card" data-category="pasteleria">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800&q=80&auto=format&fit=crop&sat=-20" alt="Torta de zanahoria con glaseado">
+                    </div>
+                    <div class="card-body">
+                        <h3>Torta de zanahoria</h3>
+                        <p>Con glaseado de queso crema.</p>
+                        <span class="price">$2.800</span>
+                    </div>
+                </article>
+
+                <article class="card product-card" data-category="frias">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop&sat=-30" alt="Café helado">
+                    </div>
+                    <div class="card-body">
+                        <h3>Café helado</h3>
+                        <p>Frío e intenso, ideal para la tarde.</p>
+                        <span class="price">$2.500</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EL FAVORITO DE LA CASA ============ -->
+    <section class="spotlight">
+        <div class="spotlight-media">
+            <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=1200&q=80&auto=format&fit=crop" alt="Alfajor de dulce de leche casero">
+        </div>
+        <div class="spotlight-content">
+            <span class="spotlight-label">El favorito de la casa</span>
+            <h2>Alfajor de dulce de leche casero</h2>
+            <p>Dos tapas de manteca, relleno generoso de dulce de leche repostero y un baño de chocolate que se rompe justo como tiene que romperse. Lo hacemos todos los días, en tandas chicas, para que llegue siempre fresco a la mesa.</p>
+            <a href="#menu" class="btn btn-primary">Pedirlo ahora</a>
+        </div>
+    </section>
+
+    <!-- ============ ¿PARA QUÉ OCASIÓN VENÍS? ============ -->
+    <section class="occasions" id="ocasiones">
+        <div class="section-inner">
+            <h2>¿Para qué ocasión venís?</h2>
+            <p class="section-lead">Contanos el motivo y preparamos la mesa acorde.</p>
+
+            <div class="occasion-grid" id="occasionGrid">
+                <button class="occasion-tile" data-occasion="Cumpleaños">Cumpleaños</button>
+                <button class="occasion-tile" data-occasion="Merienda">Merienda</button>
+                <button class="occasion-tile" data-occasion="Familia">Familia</button>
+                <button class="occasion-tile" data-occasion="Amigos">Amigos</button>
+                <button class="occasion-tile" data-occasion="Cita">Cita</button>
+                <button class="occasion-tile" data-occasion="Celebración">Celebración</button>
+                <button class="occasion-tile" data-occasion="Otra">Otra</button>
+            </div>
+
+            <p class="occasion-response" id="occasionResponse" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCIA ============ -->
+    <section class="experience">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1600&q=80&auto=format&fit=crop" alt="Mesa de la cafetería con luz cálida">
+        <div class="experience-content">
+            <h2>Un lugar para quedarte</h2>
+            <p>Mesas de madera, luz de tarde y el ruido de fondo justo para leer, charlar o no hacer nada. Así pensamos cada rincón de la cafetería.</p>
+        </div>
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="gallery" id="galeria">
+        <div class="section-inner">
+            <h2>Galería</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <button class="gallery-item"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=700&q=80&auto=format&fit=crop" alt="Granos de café tostado"></button>
+                <button class="gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=80&auto=format&fit=crop" alt="Taza de café con leche"></button>
+                <button class="gallery-item"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=80&auto=format&fit=crop" alt="Barra de la cafetería"></button>
+                <button class="gallery-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=700&q=80&auto=format&fit=crop" alt="Arte latte en forma de corazón"></button>
+                <button class="gallery-item"><img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=700&q=80&auto=format&fit=crop" alt="Pastelería casera"></button>
+                <button class="gallery-item"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=700&q=80&auto=format&fit=crop" alt="Mesa con café y notebook"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer" id="contacto">
+        <div class="section-inner footer-grid">
+            <div>
+                <p class="footer-logo">Un Lugar<span>para merendar</span></p>
+                <p>Un lugar para grandes y chicos.</p>
+            </div>
+            <div>
+                <h4>Horarios</h4>
+                <p>Lunes a domingo<br>8:00 a 21:00 hs</p>
+            </div>
+            <div>
+                <h4>Dirección</h4>
+                <p>Av. Siempre Viva 123<br>Buenos Aires</p>
+            </div>
+            <div>
+                <h4>Seguinos</h4>
+                <p><a href="#">Instagram</a><br><a href="#">Facebook</a></p>
+            </div>
+        </div>
+        <p class="footer-copy">© <span id="year"></span> Un Lugar para merendar. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ============ LIGHTBOX (GALERÍA) ============ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- ============ OVERLAY MENÚ MÓVIL ============ -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
